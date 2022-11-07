@@ -1,10 +1,43 @@
-//
-//  ViewController.m
-//  simple2
-//
-//  Created by 李明刚 on 2022/11/7.
-//
+# XCode IOS Objective C Get GPS
 
+授权问题(Authorize)
+
+- [Location Services not working in iOS 8](https://stackoverflow.com/questions/24062509/location-services-not-working-in-ios-8)
+
+获取gps整体代码
+
+- [How to fix CLLocationManager location updates issue in iOS 8](http://datacalculation.blogspot.com/2014/11/how-to-fix-cllocationmanager-location.html)
+
+参考获取 latlon 部分代码
+
+- [how to get GPS Coordinates in iphone using Objective C](https://stackoverflow.com/questions/1789519/how-to-get-gps-coordinates-in-iphone-using-objective-c)
+
+## Dev
+
+- XCode Version `13.4.1(13F100)`
+
+## Example
+
+authorize
+
+- `Privacy - Location When In Use Usage Description`
+- `Privacy - Location Always Usage Description`
+
+
+ViewController.h
+
+```objc
+#import <UIKit/UIKit.h>
+#import<CoreLocation/CoreLocation.h>
+
+@interface ViewController : UIViewController<CLLocationManagerDelegate>
+    @property (nonatomic, retain) CLLocationManager *locationManager;
+@end
+```
+
+ViewController.m
+
+```objc
 #import "ViewController.h"
 
 
@@ -67,3 +100,4 @@
 }
 
 @end
+```
